@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MangaVerse — Inicio</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="STATIC/CSS/estilos.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/img/mangaverse.png" alt="MangaVerse" height="36"> MangaVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categorias.html">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trailers.html">Tráilers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel"></div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="STATIC/IMG/slider1.jpg" class="d-block w-100" alt="Slider 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Series destacadas</h5>
+                    <p>Explora los títulos más populares y sus sinopsis.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="STATIC/IMG/slider2.jpg" class="d-block w-100" alt="Slider 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Nuevos lanzamientos</h5>
+                    <p>Mangas recientes y novedades del mundo anime/manga.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="STATIC/IMG/slider3.jpg" class="d-block w-100" alt="Slider 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Catálogo de productos</h5>
+                    <p>Pósters, figuras y tomos disponibles en nuestro catálogo.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Sección de bienvenida -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Bienvenido a MangaVerse</h2>
+                <p class="lead">Tu portal para descubrir mangas y animes. Encuentra sinopsis, tráilers, imágenes y un catálogo de productos relacionados.</p>
+                <p>Usa el menú para navegar por las categorías, ver tráilers o explorar el catálogo.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Suscríbete</h5>
+                        <p class="card-text">Recibe novedades.</p>
+                    <form action="#">
+                        <div class="mb-2">
+                            <input type="email" class="form-control" placeholder="Tu correo">
+                        </div>
+                        <button class="btn btn-primary w-100" type="button">Suscribirse</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <small>© 2025 MangaVerse — Proyecto formativo</small>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
