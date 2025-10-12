@@ -1,0 +1,125 @@
+/*==============================
+    ESTILOS GENERALES
+===============================*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Verdana', sans-serif;
+}
+
+/*==============================
+    NAVBAR
+===============================*/
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.nav-link {
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #7b5fcf !important; /* Morado */
+    font-weight: bold;
+}
+
+/*==============================
+    CARRUSEL
+===============================*/
+
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/*==============================
+    SECCIONES DE TEXTO
+===============================*/
+
+section {
+    padding: 60px 0;
+}
+
+section.bg-light {
+    background-color: #f0f0f0 !important;
+}
+
+.text-center h1, .text-center h2 {
+    color: #333;
+}
+
+/*==============================
+    CATÁLOGO / CARDS
+===============================*/
+
+.card {
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-title {
+    color: #7b5fcf;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.btn-outline-primary {
+    color: #7b5fcf;
+    border-color: #7b5fcf;
+    transition: 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: #7b5fcf;
+    color: #fff;
+}
+
+/*==============================
+    FOOTER
+===============================*/
+
+footer {
+    background-color: #222;
+    color: #fff;
+}
+
+footer small {
+    display: block;
+}
+
+/*==============================
+    RESPONSIVE
+===============================*/
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner img {
+        height: 180px;
+    }
+}
