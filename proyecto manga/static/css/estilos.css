@@ -1,0 +1,688 @@
+/*============================== FUENTES Y ESTILOS GENERALES ===============================*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(180deg, #071126 0%, #021024 100%);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #e6eef6;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding: 0; /* quita padding global */
+}
+
+a {
+    text-decoration: none;
+}
+
+/*============================== NAVBAR MODERNA ===============================*/
+.navbar {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.4s;
+}
+.navbar:hover {
+    background-color: rgba(0,0,0,0.9);
+}
+.nav-link {
+    transition: 0.3s;
+    font-weight: 500;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: #7b5fcf !important;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+/*============================== CARRUSEL CON SOMBRA Y BORDES ===============================*/
+.carousel-inner img {
+    height: 80vh;
+    object-fit: contain;
+    background: radial-gradient(circle at center, #0ff7d1 0%, #03203a 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 20px rgba(110,231,183,0.3);
+    transition: transform 0.3s;
+}
+.carousel-inner img:hover {
+    transform: scale(1.02);
+}
+
+/*============================== SECCIONES CON GRADIENTES ===============================*/
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+section.bg-light {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0ff);
+}
+section.bg-dark {
+    background: linear-gradient(135deg, #222, #444);
+    color: #fff;
+}
+
+/*============================== TÍTULOS ANIMADOS ===============================*/
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #7b5fcf;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*============================== CATÁLOGO / TARJETAS MODERNAS ===============================*/
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+.card img {
+    transition: transform 0.4s;
+}
+.card img:hover {
+    transform: scale(1.1);
+}
+.card-title {
+    color: #7b5fcf;
+    font-weight: 700;
+}
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+.btn-outline-primary {
+    color: #7b5fcf;
+    border-color: #7b5fcf;
+    transition: 0.3s;
+}
+.btn-outline-primary:hover {
+    background-color: #7b5fcf;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/*============================== PIE DE PÁGINA ===============================*/
+footer {
+    background: linear-gradient(135deg, #222, #7b5fcf);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/*============================== ANIMACIONES AL HACER SCROLL ===============================*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*============================== RESPONSIVE ===============================*/
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 300px;
+    }
+}
+@media (max-width: 576px) {
+    .carousel-inner img {
+        height: 200px;
+    }
+}
+
+/*============================== VARIABLES DE COLOR ===============================*/
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --muted: #9aa4b2;
+    --accent: #6ee7b7;
+}
+
+/*============================== ESTILOS BASE ADICIONALES ===============================*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #6ee7b7;
+    background: linear-gradient(90deg, #6ee7b7, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    margin: 28px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card img {
+    object-fit: cover;
+    height: 250px;
+    transition: transform 0.4s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.cover {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    background: #072034;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.title {
+    font-weight: 700;
+    margin: 10px 0 6px;
+    font-size: 16px;
+}
+
+.meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.synopsis {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #dbeaf1;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: #022018;
+}
+.btn.primary:hover {
+    background: #4ade80; /* un poco más brillante */
+}
+.btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--muted);
+}
+.btn.ghost:hover {
+    border-color: var(--accent);
+    color: #fff;
+}
+
+footer {
+    margin-top: 36px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+    .card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 28px;
+    }
+    .card {
+        border-radius: 15px;
+    }
+}
+
+/*============================== ANIMACIONES ===============================*/
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+/* === CATÁLOGO === */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    object-fit: cover;
+    height: 250px;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #222;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.btn-outline-primary, .btn.primary {
+    color: #7b5fcf;
+    border: 1px solid #7b5fcf;
+    background: transparent;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover, .btn.primary:hover {
+    background-color: #7b5fcf;
+    color: #fff;
+    transform: scale(1.05);
+}
+/*============================== SECCIÓN CONTACTO ===============================*/
+.contacto {
+    background: linear-gradient(135deg, #0b1220, #1f1b3a);
+    color: #fff;
+    padding: 80px 0;
+}
+
+.contacto h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #6ee7b7;
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px rgba(110, 231, 183, 0.5);
+}
+
+.contacto form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.contacto input,
+.contacto textarea {
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+.contacto input::placeholder,
+.contacto textarea::placeholder {
+    color: #aaa;
+}
+
+.contacto button {
+    background-color: #7b5fcf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.contacto button:hover {
+    background-color: #6ee7b7;
+    color: #0b1220;
+    transform: scale(1.05);
+}
+/* GRID MODERNO */
+.grid.moderno {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+/* CARD MODERNA */
+.card {
+    background: linear-gradient(145deg, rgba(20,20,35,0.8), rgba(10,10,25,0.9));
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    transition: transform 0.4s, box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 40px rgba(110,231,183,0.6);
+}
+
+/* COVER */
+.cover img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s, filter 0.4s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.cover img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+/* CARD BODY */
+.card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* TITULO Y META */
+.title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #6ee7b7;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: #9aa4b2;
+    margin-bottom: 12px;
+}
+
+/* SINOPSIS */
+.synopsis {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #dbeaf1;
+    margin-bottom: 12px;
+}
+
+/* BOTONES ACCIÓN */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn.primary {
+    background: #6ee7b7;
+    color: #022018;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn.primary:hover {
+    transform: scale(1.05);
+    background: #4ade80;
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #9aa4b2;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.btn.ghost:hover {
+    transform: scale(1.05);
+    border-color: #6ee7b7;
+    color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .cover img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cover img {
+        height: 180px;
+    }
+}
+
+.table-responsive {
+    margin-top: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(15, 23, 36, 0.85); /* Fondo oscuro semitransparente */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    color: #e6eef6;
+}
+
+.table thead {
+    background: linear-gradient(90deg, #6ee7b7, #8b5cf6);
+    color: #fff;
+}
+
+.table thead th {
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+.table tbody td {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    color: #dbeaf1;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.table tbody tr {
+    transition: background 0.3s, transform 0.3s;
+}
+
+.table tbody tr:hover {
+    background: rgba(110,231,183,0.1);
+    transform: scale(1.02);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background: rgba(255,255,255,0.03);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    .table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid rgba(255,255,255,0.1);
+    }
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: 700;
+        color: #6ee7b7;
+    }
+}
+/* ==== EFECTO IMAGEN AL PASAR EL MOUSE SOBRE LA TABLA ==== */
+.table-hover-image {
+    position: relative;
+}
+
+.table-hover-image::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.table-hover-image:hover::after {
+    opacity: 1;
+}
+/*============================== SECCIÓN BUSCADOR CENTRADO ===============================*/
+section.mb-4 {
+    display: flex;
+    justify-content: center;     /* Centra horizontalmente */
+    align-items: center;         /* Centra verticalmente */
+     height: 100vh;               /* Ocupa toda la altura de la pantalla */
+}
+
+/* Estilos modernos del buscador */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+}
+
+.search-bar input::placeholder {
+    color: #ccc;
+}
+
+.search-bar button {
+    background: linear-gradient(90deg, #6ee7b7, #8b5cf6);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.search-bar button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #8b5cf6, #6ee7b7);
+}

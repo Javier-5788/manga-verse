@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MangaVerse — Inicio</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="static/css/estilos.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/img/mangaverse.png" alt="MangaVerse" height="36"> MangaVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categorias.html">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trailers.html">Tráilers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Contacto</h1>
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <section class="mb-4">
+            <form id="searchForm" class="search-bar" onsubmit="return handleSearch(event)">
+                <input type="text" id="searchInput" placeholder="Busca algo..." aria-label="Buscar">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </form>
+        </section>
+        
+        <div class="row">
+        <div class="container my-5">
+        <h1 class="text-center mb-4">Contáctanos</h1>
+            <div class="row g-4">
+            <!-- FORMULARIO -->
+            <div class="col-md-6">                 
+                <div class="card p-4 shadow-sm border-0 rounded-3">
+                    <h4 class="mb-3 text-primary">Envíanos un mensaje</h4>
+                    <form id="contactForm" onsubmit="return handleContact(event)">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input id="nombre" type="text" class="form-control" placeholder="Tu nombre" required>
+                        </div>
+                                
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo</label>
+                            <input id="email" type="email" class="form-control" placeholder="tu@ejemplo.com" required>
+                        </div>
+                                
+                        <div class="mb-3">
+                            <label for="ubicacion" class="form-label">Ubicación</label>
+                            <div class="input-group">
+                                <input id="ubicacion" type="text" class="form-control" placeholder="Ciudad o 'Usar mi ubicación'">
+                                <button type="button" class="btn btn-outline-secondary" onclick="usarMiUbicacion()">📍</button>
+                            </div>
+                        </div>
+                                
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+                                
+                        <button class="btn btn-primary w-100" type="submit">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+                
+            <!-- MAPA -->
+            <div class="col-md-6">
+                <div class="card p-3 shadow-sm border-0 rounded-3 h-100">
+                    <h4 class="mb-3 text-primary">Nuestra ubicación</h4>
+                    <iframe
+                        id="mapa"
+                        class="w-100 rounded-3"
+                        height="400"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127248.3515533497!2d-74.15040900000001!3d4.680878699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b954c7ea505%3A0xd28c94814b1d1633!2sGran%20Estaci%C3%B3n%20Centro%20Comercial!5e0!3m2!1ses!2sco!4v1760249591745!5m2!1ses!2sco"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <small>© 2025 MangaVerse — Valeria Alvarado y Javier Marquez</small>
+    </footer>
+
+</body>
+</html>
