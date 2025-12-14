@@ -1,0 +1,615 @@
+/* =================== FUENTES =================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Press+Start+2P&display=swap');
+
+/* =================== VARIABLES =================== */
+:root {
+    --bg-dark-1: #071126;
+    --bg-dark-2: #021024;
+    --panel-bg: rgba(15, 23, 36, 0.85);
+    --card-bg-1: rgba(20, 20, 35, 0.8);
+    --card-bg-2: rgba(10, 10, 25, 0.9);
+    --muted: #9aa4b2;
+    --accent: #0e744b;
+    --accent-2: #7b5fcf;
+    --text-light: #e6eef6;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-2: rgba(255, 255, 255, 0.01);
+}
+
+/* =================== RESET / BASE =================== */
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(180deg, #071126 0%, #021024 100%);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #197bdd;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding: 0;
+    /* quita padding global */
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* =================== LINKS =================== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =================== CONTAINERS =================== */
+.container,
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =================== NAVBAR =================== */
+.navbar {
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color .4s, transform .2s;
+}
+
+.navbar:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar .nav-link {
+    transition: 0.3s;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent-2) !important;
+    font-weight: 700;
+    transform: scale(1.06);
+}
+
+/* =================== HEADINGS =================== */
+h1,
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--accent-2);
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================== SECTIONS =================== */
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section.bg-light {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0ff);
+    color: #000;
+}
+
+section.bg-dark {
+    background: linear-gradient(135deg, #222, #444);
+    color: #fff;
+}
+
+/* =================== CARDS =================== */
+.card {
+    background: linear-gradient(145deg, var(--card-bg-1), var(--card-bg-2));
+    color: var(--text-light);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.35s, box-shadow 0.35s;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 40px rgba(110, 231, 183, 0.18);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-title,
+.title {
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.card-text,
+.synopsis {
+    font-size: 0.95rem;
+    color: #5fbae4;
+    line-height: 1.35;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.cover {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    background: #072034;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* =================== GRIDS =================== */
+.grid.moderno {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* =================== BOTONES =================== */
+.btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .18s, background .25s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: #022018;
+    border: none;
+}
+
+.btn.primary:hover {
+    background: #a34ade;
+}
+
+.btn.primary.claro {
+    background: #ff4757;
+    color: #fff;
+}
+
+.btn.primary.claro:hover {
+    background: #e84141;
+}
+
+.btn.ghost {
+    border: 2px solid #ff4757;
+    background: transparent;
+    color: #ff4757;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn.ghost:hover {
+    background: #ff4757;
+    color: white;
+}
+
+.btn-ver-productos {
+    background-color: #5445df;
+    color: #8c2fd8;
+    border: 2px solid #501488;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px;
+    width: 100%;
+    transition: all .25s ease;
+}
+
+.btn-ver-productos:hover {
+    background-color: var(--accent-2);
+    color: #000;
+    transform: scale(1.03);
+}
+
+/* =================== TABLAS =================== */
+.table-responsive {
+    margin-top: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--panel-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+    color: var(--text-light);
+}
+
+.table thead {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff;
+}
+
+.table thead th {
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+.table tbody td {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    color: #dbeaf1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.table tbody tr:hover {
+    background: rgba(110, 231, 183, 0.06);
+    transform: scale(1.01);
+}
+
+@media(max-width:768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: 700;
+        color: var(--accent);
+    }
+}
+
+/* =================== CONTACTO =================== */
+.contacto {
+    background: linear-gradient(135deg, #0b1220, #1f1b3a);
+    color: #fff;
+    padding: 48px 0;
+}
+
+.contacto h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(110, 231, 183, 0.35);
+}
+
+.contacto form {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.contacto input,
+.contacto textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.contacto input::placeholder,
+.contacto textarea::placeholder {
+    color: #aaa;
+}
+
+.contacto button {
+    background: var(--accent-2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 18px;
+    border: 0;
+}
+
+.contacto button:hover {
+    background: var(--accent);
+    color: #071821;
+    transform: scale(1.03);
+}
+
+/* =================== TOMOS / DETALLE =================== */
+.tomo-box {
+    display: flex;
+    gap: 25px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    color: #111;
+}
+
+.tomo-img {
+    width: 280px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.tomo-list {
+    flex: 1;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    margin: 15px 0;
+}
+
+/* =================== FOOTER =================== */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* =================== CARRUSEL =================== */
+
+.carousel-inner img {
+    height: 80vh;
+    object-fit: contain;
+    background: radial-gradient(circle at center, #0ff7d1 0%, #03203a 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(110, 231, 183, 0.3);
+    transition: transform 0.3s;
+}
+
+.carousel-inner img:hover {
+    transform: scale(1.02);
+}
+
+
+/* =================== ANIMACIONES =================== */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =================== RESPONSIVE =================== */
+@media(max-width:768px) {
+    .carousel-inner img {
+        height: 300px;
+        ;
+    }
+}
+
+@media(max-width:576px) {
+    .carousel-inner img {
+        height: 200px;
+    }
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: #020b1a;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.producto-detalles {
+    background-color: rgb(5, 50, 109);
+    color: white;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.producto-titulo {
+    font-size: 1rem;
+}
+
+
+.producto-agregar {
+    border: 0;
+    background-color: white;
+    color: rgb(5, 50, 109);
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: background-color .2s, color .2s;
+}
+
+
+.producto-agregar:hover {
+    background-color: rgb(5, 50, 109);
+    color: var(white);
+}
+
+/* =================== WRAPPER =================== */
+.wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 80px);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* =================== BOTONES DEL MENÚ =================== */
+.boton-menu {
+    background: transparent;
+    border: 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.25s, transform 0.2s, color 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.boton-menu:hover {
+    background-color: rgba(123, 95, 207, 0.15);
+    color: var(--accent-2);
+    transform: translateX(5px);
+}
+
+.boton-menu.active {
+    background-color: var(--accent-2);
+    color: #000;
+    font-weight: 700;
+}
+
+/* =================== CONTENEDOR DE PRODUCTOS =================== */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    animation: aparecer 0.6s ease-out;
+}
+.disabled {
+    display: none;
+}
+.carrito-productos img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ===== CARRITO ===== */
+
+.contenedor-carrito {
+    padding: 1.5rem;
+    animation: aparecer .4s ease-out;
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.carrito-productos > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.04);
+    padding: 1rem;
+    border-radius: 12px;
+}
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    align-items: center;
+}
+
+.carrito-acciones-total p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.carrito-vacio,
+.carrito-comprado {
+    text-align: center;
+    font-size: 1.1rem;
+}
