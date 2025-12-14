@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo - MangaVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="static/img/mangaverse.png" alt="MangaVerse" height="36"> MangaVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categorias.html">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trailers.html">Tráilers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalogo_principal.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <center>
+        <img src="static/img/mangaverse.png" height="100" width="100">
+        <h1>FACTURA DE VENTAS MANGAVERSE</h1>
+
+        <form id="formFactura" action="#">
+
+            <!-- DATOS DEL CLIENTE -->
+            <table border="1" cellpadding="5">
+                <caption><b>FACTURA DE VENTA</b></caption>
+
+                <!-- ================= DATOS DEL CLIENTE ================= -->
+                <tr>
+                    <th>NOMBRE</th>
+                    <td><input type="text" name="nombre_cliente" required></td>
+
+                    <th>TIPO DOCUMENTO</th>
+                    <td>
+                        <select name="tipo_documento" required>
+                            <option value="CC">CC</option>
+                            <option value="CE">CE</option>
+                            <option value="NIT">NIT</option>
+                        </select>
+                    </td>
+
+                    <th>N° DOCUMENTO</th>
+                    <td><input type="text" name="numero_documento" required></td>
+                </tr>
+
+                <tr>
+                    <th>DIRECCIÓN</th>
+                    <td><input type="text" name="direccion"></td>
+
+                    <th>TELÉFONO</th>
+                    <td><input type="text" name="telefono"></td>
+
+                    <th>EMPLEADO</th>
+                    <td><input type="text" name="empleado"></td>
+                </tr>
+
+                <!-- ================= ENCABEZADO PRODUCTOS ================= -->
+                <tr>
+                    <th>REFERENCIA</th>
+                    <th colspan="2">DESCRIPCIÓN</th>
+                    <th>CANTIDAD</th>
+                    <th>VALOR UNITARIO</th>
+                    <th>SUBTOTAL</th>
+                </tr>
+
+                <!-- ================= DETALLE PRODUCTOS (JS) ================= -->
+                <tbody id="detalleFactura"></tbody>
+
+                <!-- ================= TOTALES ================= -->
+                <tr>
+                    <th colspan="4">FORMA DE PAGO</th>
+                    <td colspan="2">
+                        <input type="radio" name="fp" required> Efectivo
+                        <input type="radio" name="fp"> Nequi
+                        <input type="radio" name="fp"> Tarjeta Crédito
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">SUBTOTAL</th>
+                    <td colspan="2"><input type="text" id="subt" readonly></td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">IVA (19%)</th>
+                    <td colspan="2"><input type="text" id="iva" readonly></td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">TOTAL NETO</th>
+                    <td colspan="2"><input type="text" id="neto" readonly></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3"><input type="reset" value="BORRAR"></td>
+                    <td colspan="3"><input type="submit" value="GENERAR FACTURA"></td>
+                </tr>
+            </table>
+
+
+        </form>
+    </center>
+
+
+
+    <script src="factura_manga.js">
+    </script>
+
+</body>
+
+</html>
